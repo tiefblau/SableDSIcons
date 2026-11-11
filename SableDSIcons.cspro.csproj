@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>bepinex.plugin.min.sabledsicons</AssemblyName>
+		<Product>DS Icons for Sable</Product>
+		<Version>1.0.0</Version>
+		<Authors>tiefblau</Authors>
+		<Description>BepInEx plugin for Sable. Replaces Xbox button prompts with PlayStation button prompts.</Description>
+		<Copyright>Copyright © 2026</Copyright>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<LangVersion>latest</LangVersion>
+		<RestoreAdditionalProjectSources>
+			https://api.nuget.org/v3/index.json;
+			https://nuget.bepinex.dev/v3/index.json;
+			https://nuget.samboy.dev/v3/index.json
+		</RestoreAdditionalProjectSources>
+		<RootNamespace>SableDSIcons</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Label="UserMacros">
+		<GameDirectory>$(HOME)/Applications/Sable.app/Contents/drive_c/GOG Games/Sable</GameDirectory>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(GameDirectory)/BepInEx/interop/Assembly-CSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="GameTemplateAssembly">
+			<HintPath>$(GameDirectory)/BepInEx/interop/GameTemplateAssembly.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>$(GameDirectory)/BepInEx/interop/Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(GameDirectory)/BepInEx/interop/Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(GameDirectory)/BepInEx/interop/UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(GameDirectory)/BepInEx/interop/UnityEngine.UI.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+    
+</Project>
